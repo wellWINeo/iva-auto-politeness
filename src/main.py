@@ -24,4 +24,7 @@ if __name__ == "__main__":
 
     iva = IvaClient(config.iva_host, config.credentials)
 
-    iva.send_message(config.chat_id, config.profiles[args.profile].pick_message())
+    if (args.profile in config.profiles):
+        profile = config.profiles[args.profile]
+        
+        iva.send_message(profile.chat_id, profile.pick_message())

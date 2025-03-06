@@ -4,6 +4,7 @@ import random
 
 @dataclass
 class Profile:
+    chat_id: str
     messages: list[str]
 
     def pick_message(self) -> str:
@@ -26,7 +27,6 @@ class Credentials:
 @dataclass
 class Config:
     iva_host: str
-    chat_id: str
     credentials: Credentials
     jitter: JitterRange
     profiles: dict[str, Profile]
@@ -37,7 +37,6 @@ class Config:
 
         return cls(
             iva_host=data["iva_host"],
-            chat_id=data["chat_id"],
             credentials=Credentials(**data["credentials"]),
             jitter=JitterRange(**data["jitter"]),
             profiles={key: Profile(**value) for key, value in data["profiles"].items()}
