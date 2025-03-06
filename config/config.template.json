@@ -1,0 +1,17 @@
+{
+    "iva_host": "https://iva.example.com",
+    "chat_id": "00000000-0000-0000-0000-000000000000",
+    "credentials": {
+        "login": "user",
+        "password": "password"
+    },
+    "jitter": {
+        "min": 1,
+        "max": 15
+    },
+    "profiles": {
+        "test": {
+            "messages": ["Hello world", "This is just a test"]
+        }
+    }
+}
