@@ -44,5 +44,5 @@ class Config:
     
     @classmethod
     def from_path(cls, path: str) -> "Config":
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             return cls.from_json(f.read())
